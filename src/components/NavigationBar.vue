@@ -1,20 +1,17 @@
 <template>
   <div class="nav-bar">
-    <div class="hidden-xs">
-      <img v-show="this.theme === 'dark'" :src="require('@/assets/images/banner_dark.png')" alt="Logo" class="ma-5"
-           width="150">
-      <img v-show="this.theme === 'light'" :src="require('@/assets/images/banner_light.png')" alt="Logo" class="ma-5"
-           width="150">
+    <div class="nav-logo-container">
+      <img
+          :src=" this.theme === 'dark' ? require('@/assets/images/banner_dark.png') : require('@/assets/images/banner_light.png')"
+          alt="Logo"
+          class="ma-5 hidden-xs"
+          width="150">
     </div>
-    <div class="hidden-sm-and-up">
-      <img :src="require('@/assets/images/logo.png')" alt="Logo" class="ma-5"
-           height="53">
-    </div>
-    <div>
-      <h3><a v-smooth-scroll="{offset: -120}" class="text-primary app-bar-link pr-5" href="#home">.home()</a></h3>
-      <h3><a v-smooth-scroll="{offset: -120}" class="text-primary app-bar-link pr-5" href="#about">.about()</a></h3>
-      <h3><a v-smooth-scroll="{offset: -120}" class="text-primary app-bar-link pr-5" href="#contact">.contact()</a></h3>
-      <v-btn class="mr-5" color="primary" icon="mdi-brightness-6" size="x-small"
+    <div class="nav-button-container">
+      <h3><a v-smooth-scroll="{offset: -120}" class="text-primary app-bar-link pr-4" href="#home">.home()</a></h3>
+      <h3><a v-smooth-scroll="{offset: -120}" class="text-primary app-bar-link pr-4" href="#about">.about()</a></h3>
+      <h3><a v-smooth-scroll="{offset: -120}" class="text-primary app-bar-link pr-4" href="#contact">.contact()</a></h3>
+      <v-btn class="mr-4" color="primary" icon="mdi-brightness-6" size="x-small"
              @click="this.$emit('toggle-theme')"></v-btn>
     </div>
   </div>
